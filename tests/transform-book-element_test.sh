@@ -17,10 +17,10 @@
 # You should have received a copy of the GNU General Public License
 # along with lab-tdd-xslt.  If not, see <http://www.gnu.org/licenses/>.
 
-testThatALibraryElementIsTransformAsUnorderedList()
+testThatABookElementIsTransformAsAListItem()
 {
-  xmldoc="$xmldocHeader<library />"
-  expected="<ul></ul>"
+  xmldoc="$xmldocHeader<book />"
+  expected="<li>"
   actual=`echo ${xmldoc} | ${xsltprocCmd}`
 
   assertEquals ${expected} ${actual}
@@ -30,3 +30,4 @@ oneTimeSetUp() {
   xsltprocCmd='xsltproc src/xslt/library.xslt -'
   xmldocHeader='<?xml version="1.0"?>'
 }
+

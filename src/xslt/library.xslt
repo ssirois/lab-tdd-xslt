@@ -1,3 +1,4 @@
+<?xml version= "1.0" ?>
 <!--
 library.xslt — declares transformation rules for a library
 
@@ -18,3 +19,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with lab-tdd-xslt.  If not, see <http://www.gnu.org/licenses/>.
 -->
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="html" indent="no" />
+
+  <xsl:template match="/library">
+    <ul>
+      <xsl:apply-templates select="book" />
+    </ul>
+  </xsl:template>
+
+  <xsl:template match="book">
+    <li></li>
+  </xsl:template>
+</xsl:stylesheet>
